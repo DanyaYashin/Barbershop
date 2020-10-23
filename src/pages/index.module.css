@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet');
 
+html{
+  scroll-behavior: smooth;
+}
+
 .title{
   font-family: 'Anton', sans-serif;
 }
@@ -23,6 +27,7 @@
 
 .topmenu ul{
   list-style: none;
+
 }
 
 .topmenu li{
@@ -47,24 +52,74 @@ body{
 }
 
 .img_1{
-  position: absolute;
+  padding-top: 500px;
   z-index: 1;
-  width: 110%;
+  width: 105%;
+  height: 100%;
   transform: skewY(-6deg);
   top: 60%;
   opacity: 0.7;
   margin-left: -10px;
+  filter: blur(3px);
+}
+
+.img_1_parallax{
+  scrollAxis: horizontal;
+}
+
+.img_2{
+  padding-top: 300px;
+  z-index: 1;
+  width: 105%;
+  transform: skewY(-6deg);
+  top: 200%;
+  opacity: 0.7;
+  margin-left: -10px;
+  filter: blur(3px);
 }
 
 .text_1{
-  position: relative;
+  position: absolute;
+  top: 300px;
   z-index: 2;
   float: left;
   width: 50%;
   font-size: 30px;
-  margin-top: 400px;
-  margin-bottom: 300px;
   margin-left: 40%;
   color: #FFB140;
   text-shadow: 1px 1px 2px black;
+}
+
+.price_list{
+  padding-left: 20%;
+}
+
+.price_title{
+  text-align: center;
+}
+
+.price{
+  margin-top: 300px;
+  background: rgba(18, 14, 33, 0.8);
+  transform: skewY(-6deg);
+  width: 60%;
+  padding: 100px;
+}
+
+.price ul {
+  transform: skewY(6deg);
+  color: white;
+  font-size: 20px;
+}
+
+.price li {
+  display: flex;
+}
+
+.price a {
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  padding-left: 70px;
+  color: white;
 }
