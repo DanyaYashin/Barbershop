@@ -3,6 +3,7 @@
 
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .title{
@@ -10,8 +11,8 @@ html{
 }
 
 .topmenu{
-  position: fixed;
   z-index: 3;
+  position: fixed;
   width: 110%;
   height: 150px;
   margin: -10px;
@@ -35,6 +36,7 @@ html{
 }
 
 .topmenu a {
+  margin-top: 10px;
   text-decoration: none;
   display: block;
   padding: 10px;
@@ -52,46 +54,76 @@ body{
 }
 
 .img_1{
-  padding-top: 500px;
+  position: relative;
   z-index: 1;
-  width: 105%;
-  height: 100%;
-  transform: skewY(-6deg);
-  top: 60%;
-  opacity: 0.7;
-  margin-left: -10px;
-  filter: blur(3px);
-}
-
-.img_1_parallax{
-  scrollAxis: horizontal;
+  padding-top: 100px;
+  margin-left: 100px;
+  filter: blur(2px);
+  width: 28%;
+  transform: scaleX(-1);
 }
 
 .img_2{
-  padding-top: 300px;
+  position: relative;
   z-index: 1;
-  width: 105%;
-  transform: skewY(-6deg);
-  top: 200%;
-  opacity: 0.7;
-  margin-left: -10px;
-  filter: blur(3px);
+  margin-top: 50px;
+  margin-left: 450px;
+  filter: blur(2px);
+  width: 25%;
+  transform: rotate(25deg);
+}
+
+.img_3{
+  position: relative;
+  z-index: 1;
+  margin-left: 850px;
+  filter: blur(2px);
+  width: 35%;
+  transform: scaleX(-1);
+}
+
+.img_4{
+  position: relative;
+  z-index: 1;
+  margin-top: -100px;
+  margin-left: 100px;
+  filter: blur(2px);
+  width: 30%;
+  transform: scaleX(-1) rotate(-65deg);
+}
+
+.img_parallax{
+  padding-top: 300px
 }
 
 .text_1{
+  z-index: 2;
   position: absolute;
   top: 300px;
-  z-index: 2;
   float: left;
   width: 50%;
   font-size: 30px;
   margin-left: 40%;
-  color: #FFB140;
+  padding-bottom: 300px;
+  color: #FF9700;
+  text-shadow: 1px 1px 2px black;
+}
+
+.text_2{
+  z-index: 2;
+  position: absolute;
+  top: 200vh;
+  width: 50%;
+  font-size: 30px;
+  margin-left: 8%;
+  padding-bottom: 300px;
+  color: #FF9700;
   text-shadow: 1px 1px 2px black;
 }
 
 .price_list{
-  padding-left: 20%;
+  padding-left: 20vw;
+
 }
 
 .price_title{
@@ -99,11 +131,13 @@ body{
 }
 
 .price{
+  z-index: 2;
   margin-top: 300px;
-  background: rgba(18, 14, 33, 0.8);
+  background: rgba(18, 14, 33, 1);
   transform: skewY(-6deg);
-  width: 60%;
+  width: 40vw;
   padding: 100px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
 }
 
 .price ul {
@@ -122,4 +156,40 @@ body{
   font-size: 20px;
   padding-left: 70px;
   color: white;
+}
+
+.gallery{
+  margin-top: -200px;
+  margin-bottom: -150px;
+  margin-left: 36.5vw;
+  width: 350px;
+  height: 108vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: rotate(-96deg);
+}
+
+.gallery img{
+  padding-top: 200px;
+  margin-bottom: -70px;
+  width: 550px;
+  height: 420px;
+  transform: rotate(96deg);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.contact{
+  margin-top: 200px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  height: 200px;
+  padding-bottom: 300px;
+  padding-top: 100px;
+  margin-left: -2.5vw;
+  width: 105vw;
+  background: linear-gradient(#807565 10%, #120E21);
 }
