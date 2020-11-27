@@ -53,12 +53,23 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
-.img_1{
+
+.img_1_1{
   position: relative;
   z-index: 1;
   padding-top: 100px;
   margin-left: 100px;
-  filter: blur(2px);
+  filter: blur(1px);
+  width: 28%;
+  transform: scaleX(1);
+}
+
+.img_1_2{
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  margin-left: -27.5vw;
+  filter: blur(1px);
   width: 28%;
   transform: scaleX(-1);
 }

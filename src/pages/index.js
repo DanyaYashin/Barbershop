@@ -1,12 +1,35 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styles from "./index.module.css"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import sc1 from "../../static/414-4143251_png-file-scissors-svg.png";
+import sc2 from "../../static/414-4143251_png-file-scissors-svg (1).png";
+
+
 
 
 export default function Home() {
 
+  //const [scrollPosition, setScrollPosition] = useState(0);
+  const [Angle, setAngle] = useState(0);
+  const handleScroll = () => {
+    //const position = window.pageYOffset;
+    //setScrollPosition(position);
+    const supportAngle = window.pageYOffset;
+    if (Angle > 45){
+      supportAngle = 90 - Angle;
+    }
+    setAngle(supportAngle)
+};
+
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  });
+
   return (
+
+
     <div>
 
       <div className={styles.topmenu}>
@@ -20,7 +43,8 @@ export default function Home() {
 
       <ParallaxProvider>
       <Parallax className={styles.img_parallax} y={[-50, 50]}>
-      <img src ="https://www.pngkit.com/png/full/414-4143251_png-file-scissors-svg.png" className = {styles.img_1} alt="image"/>
+      <img src ={sc1}  className = {styles.img_1_1} alt="image"/>
+      <img src ={sc2} style = {{transform: `rotate(${Angle}deg)`}} className = {styles.img_1_2} alt="image"/>
       </Parallax>
       <Parallax className={styles.img_parallax} y={[100, -100]}>
       <img src ="https://svgsilh.com/svg/158079.svg" className = {styles.img_2} alt="image"/>
