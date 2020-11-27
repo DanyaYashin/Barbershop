@@ -15,9 +15,10 @@ export default function Home() {
   const handleScroll = () => {
     //const position = window.pageYOffset;
     //setScrollPosition(position);
-    const supportAngle = window.pageYOffset;
-    if (Angle > 45){
-      supportAngle = 90 - Angle;
+    let supportAngle = (window.pageYOffset)%50;
+
+    if (supportAngle > 25){
+      supportAngle = 50 - supportAngle;
     }
     setAngle(supportAngle)
 };
