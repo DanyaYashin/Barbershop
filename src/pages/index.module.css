@@ -170,30 +170,20 @@ body{
 }
 
 .gallery{
-  margin-top: -200px;
-  margin-bottom: -150px;
-  margin-left: 36.5vw;
-  width: 350px;
-  height: 108vw;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transform: rotate(-96deg);
+  margin-top: 300px;
+  margin-left: 300vw;
+  width: 3000px;
+  position: fixed;
 }
 
 .gallery img{
-  padding-top: 200px;
-  margin-bottom: -70px;
-  width: 550px;
-  height: 420px;
-  transform: rotate(96deg);
-}
-
-::-webkit-scrollbar {
-    width: 0px;
+  width: 500px;
+  height: 400px;
+  float: left;
 }
 
 .contact{
-  margin-top: 200px;
+  margin-top: 1000px;
   font-size: 20px;
   color: white;
   text-align: center;

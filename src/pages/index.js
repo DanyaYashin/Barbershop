@@ -4,7 +4,10 @@ import styles from "./index.module.css"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import sc1 from "../../static/414-4143251_png-file-scissors-svg.png";
 import sc2 from "../../static/414-4143251_png-file-scissors-svg (1).png";
-
+import usiki1 from "../../static/usiki1.png";
+import usiki2 from "../../static/usiki2.png";
+import usiki3 from "../../static/usiki3.png";
+import usiki4 from "../../static/usiki4.png";
 
 
 
@@ -12,21 +15,33 @@ export default function Home() {
 
   //const [scrollPosition, setScrollPosition] = useState(0);
   const [Angle, setAngle] = useState(0);
+  const [usiki, setUsiki] = useState(0);
+  const [gallery, setGallery] = useState(0);
   const handleScroll = () => {
     //const position = window.pageYOffset;
     //setScrollPosition(position);
-    let supportAngle = (window.pageYOffset)%50;
-
-    if (supportAngle > 25){
-      supportAngle = 50 - supportAngle;
+    let supportAngle = ((window.pageYOffset)/5)%30;
+    let movingUsiki = ((window.pageYOffset)/2)%6;
+    let horizontalScrolling = ((window.pageYOffset));
+    if (supportAngle > 15){
+      supportAngle = 30 - supportAngle;
     }
-    setAngle(supportAngle)
+    if (movingUsiki > 3){
+      movingUsiki = 6 - supportAngle;
+    }
+    setAngle(supportAngle);
+    setUsiki(movingUsiki);
+    setGallery(horizontalScrolling);
 };
+
+
 
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
   });
+
+
 
   return (
 
@@ -44,7 +59,7 @@ export default function Home() {
 
       <ParallaxProvider>
       <Parallax className={styles.img_parallax} y={[-50, 50]}>
-      <img src ={sc1}  className = {styles.img_1_1} alt="image"/>
+      <img src ={sc1} style = {{transform: `rotate(-${Angle}deg)`}} className = {styles.img_1_1} alt="image"/>
       <img src ={sc2} style = {{transform: `rotate(${Angle}deg)`}} className = {styles.img_1_2} alt="image"/>
       </Parallax>
       <Parallax className={styles.img_parallax} y={[100, -100]}>
@@ -74,10 +89,11 @@ export default function Home() {
             <li><p>Женская.........................................................................1500р</p></li>
             <li><p>Детская..........................................................................1000р</p></li>
           </ul>
+          <img src ={`usiki${usiki.toString()}`} alt="image"/>
         </div>
       </div>
 
-      <div className={styles.gallery} id="gallery">
+      <div className={styles.gallery} style = {{margin: `-${gallery}px`}} id="gallery">
         <img src ="https://techcrunch.com/wp-content/uploads/2019/06/songe-dave-barbershop.jpg?w=730&crop=1"/>
         <img src ="https://avatars.mds.yandex.net/get-altay/2004078/2a0000016f1a2fcdb8668a715260e6e09956/XXL"/>
         <img src ="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/to3pHsmq9xGEvp9F2thJiOq221c=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/UKX5C3AHQ4I6TEW3FHT2VWB2IU.jpg"/>
