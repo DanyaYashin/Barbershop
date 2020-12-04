@@ -79,7 +79,6 @@ body{
   z-index: 1;
   margin-top: 50px;
   margin-left: 450px;
-  filter: blur(2px);
   width: 25%;
   transform: rotate(25deg);
 }

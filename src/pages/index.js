@@ -4,23 +4,31 @@ import styles from "./index.module.css"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import sc1 from "../../static/414-4143251_png-file-scissors-svg.png";
 import sc2 from "../../static/414-4143251_png-file-scissors-svg (1).png";
-
-
+import us1 from "../../static/usiki1.png";
+import us2 from "../../static/usiki2.png";
+import us3 from "../../static/usiki3.png";
+import us4 from "../../static/usiki4.png";
 
 
 export default function Home() {
 
   //const [scrollPosition, setScrollPosition] = useState(0);
+  const frameArray = [us1,us2,us3,us4];
   const [Angle, setAngle] = useState(0);
+  const [frame, setFrame] = useState(0);
   const handleScroll = () => {
     //const position = window.pageYOffset;
     //setScrollPosition(position);
     let supportAngle = (window.pageYOffset)%50;
-
+    let supportFrame = (Math.floor(window.pageYOffset/200))%6;
     if (supportAngle > 25){
       supportAngle = 50 - supportAngle;
-    }
-    setAngle(supportAngle)
+    };
+    setAngle(supportAngle);
+    if (supportFrame > 3){
+      supportFrame = 6 - supportFrame;
+    };
+    setFrame(supportFrame);
 };
 
 
@@ -48,7 +56,7 @@ export default function Home() {
       <img src ={sc2} style = {{transform: `rotate(${Angle}deg)`}} className = {styles.img_1_2} alt="image"/>
       </Parallax>
       <Parallax className={styles.img_parallax} y={[100, -100]}>
-      <img src ="https://svgsilh.com/svg/158079.svg" className = {styles.img_2} alt="image"/>
+      <img src ={`${frameArray[`${frame}`]}`} className = {styles.img_2} alt="image"/>
       </Parallax>
       <Parallax className={styles.img_parallax} y={[-70, 70]}>
       <img src ="https://cdn.onlinewebfonts.com/svg/img_135463.png" className = {styles.img_3} alt="image"/>
