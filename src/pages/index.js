@@ -53,7 +53,7 @@ export default function Home() {
       </div>
 
       <ParallaxProvider>
-      <Parallax className={styles.img_parallax} y={[-50, 50]}>
+      <Parallax className={styles.img_parallax} y={[-60, 60]}>
       <img src ={sc1} style = {{transform: `rotate(-${Angle}deg)`}} className = {styles.img_1_1} alt="image"/>
       <img src ={sc2} style = {{transform: `rotate(${Angle}deg)`}} className = {styles.img_1_2} alt="image"/>
       </Parallax>
@@ -63,7 +63,7 @@ export default function Home() {
       <Parallax className={styles.img_parallax} y={[-70, 70]}>
       <img src ="https://cdn.onlinewebfonts.com/svg/img_135463.png" className = {styles.img_3} alt="image"/>
       </Parallax>
-      <Parallax className={styles.img_parallax} y={[100, -100]}>
+      <Parallax className={styles.img_parallax} y={[100, -60]}>
       <img src ="https://svgsilh.com/svg/2702564.svg" className = {styles.img_4} alt="image"/>
       </Parallax>
       </ParallaxProvider>
@@ -91,8 +91,8 @@ export default function Home() {
       </div>
 
 
-      <div className={styles.gallery_out}style={{transform: `matrix(1, 0, 0, 1,${-gallery},0)`}}>
-      <div className={styles.gallery} style = {{marginTop: `${-gallery}px`}} id="gallery">
+      <div className={styles.gallery_out}>
+      <div className={styles.gallery} style={{transform: `matrix(1, 0, 0, 1,${(-gallery)},${gallery-3000})`}} id="gallery">
         <img src ="https://techcrunch.com/wp-content/uploads/2019/06/songe-dave-barbershop.jpg?w=730&crop=1"/>
         <img src ="https://avatars.mds.yandex.net/get-altay/2004078/2a0000016f1a2fcdb8668a715260e6e09956/XXL"/>
         <img src ="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/to3pHsmq9xGEvp9F2thJiOq221c=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/UKX5C3AHQ4I6TEW3FHT2VWB2IU.jpg"/>
@@ -102,14 +102,14 @@ export default function Home() {
       </div>
       </div>
 
-
       <div className={styles.contact} id="contact">
-        <h2>Контакты</h2>
-        <p>Место для вашего номера телефона</p>
-        <p>Место для вашего мыла</p>
-        <p>Инста</p>
-        <p>Ещё что-нибудь важное</p>
-      </div>
+   <h2>Контакты</h2>
+   <p>Место для вашего номера телефона</p>
+   <p>Место для вашего мыла</p>
+   <p>Инста</p>
+   <p>Ещё что-нибудь важное</p>
+ </div>
+
     </div>
   )
 

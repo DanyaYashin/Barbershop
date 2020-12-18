@@ -79,7 +79,7 @@ body{
   z-index: 1;
   margin-top: 50px;
   margin-left: 450px;
-  filter: blur(2px);
+  filter: blur(1px);
   width: 25%;
   transform: rotate(25deg);
 }
@@ -88,7 +88,7 @@ body{
   position: relative;
   z-index: 1;
   margin-left: 850px;
-  filter: blur(2px);
+  filter: blur(1px);
   width: 35%;
   transform: scaleX(-1);
 }
@@ -98,7 +98,7 @@ body{
   z-index: 1;
   margin-top: -100px;
   margin-left: 100px;
-  filter: blur(2px);
+  filter: blur(1px);
   width: 30%;
   transform: scaleX(-1) rotate(-65deg);
 }
@@ -175,10 +175,16 @@ body{
   padding-left: 10vw;
 }
 
+.gallery_out{
+  height: 365vw;
+
+}
+
 .gallery{
-  margin-top: 200px;
+  margin-left: 330vw;
+
   width: 300vw;
-  position: absolute;
+  margin-top: -120px;
 }
 
 .gallery img{
@@ -190,7 +196,6 @@ body{
 
 .contact{
   margin-bottom: -10px;
-  margin-top: 1200px;
   font-size: 20px;
   color: white;
   text-align: center;
