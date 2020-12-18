@@ -4,43 +4,44 @@ import styles from "./index.module.css"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import sc1 from "../../static/414-4143251_png-file-scissors-svg.png";
 import sc2 from "../../static/414-4143251_png-file-scissors-svg (1).png";
-import usiki1 from "../../static/usiki1.png";
-import usiki2 from "../../static/usiki2.png";
-import usiki3 from "../../static/usiki3.png";
-import usiki4 from "../../static/usiki4.png";
+import us1 from "../../static/usiki1.png";
+import us2 from "../../static/usiki2.png";
+import us3 from "../../static/usiki3.png";
+import us4 from "../../static/usiki4.png";
 
 
 
 export default function Home() {
 
-  //const [scrollPosition, setScrollPosition] = useState(0);
+  const frameArray = [us1,us2,us3,us4];
   const [Angle, setAngle] = useState(0);
   const [usiki, setUsiki] = useState(0);
   const [gallery, setGallery] = useState(0);
+  const [stop, setStop] = useState(0);
   const handleScroll = () => {
-    //const position = window.pageYOffset;
-    //setScrollPosition(position);
     let supportAngle = ((window.pageYOffset)/5)%30;
     let movingUsiki = ((window.pageYOffset)/2)%6;
     let horizontalScrolling = ((window.pageYOffset));
+    let stopScrolling = ((window.pageYOffset));
     if (supportAngle > 15){
       supportAngle = 30 - supportAngle;
     }
     if (movingUsiki > 3){
-      movingUsiki = 6 - supportAngle;
+      movingUsiki = 6 - movingUsiki;
+    }
+    if (3000 < stopScrolling <3500){
+      stopScrolling='fixed';
     }
     setAngle(supportAngle);
     setUsiki(movingUsiki);
     setGallery(horizontalScrolling);
+    setStop(stopScrolling);
 };
-
-
 
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
   });
-
 
 
   return (
@@ -62,7 +63,7 @@ export default function Home() {
       <img src ={sc1} style = {{transform: `rotate(-${Angle}deg)`}} className = {styles.img_1_1} alt="image"/>
       <img src ={sc2} style = {{transform: `rotate(${Angle}deg)`}} className = {styles.img_1_2} alt="image"/>
       </Parallax>
-      <Parallax className={styles.img_parallax} y={[100, -100]}>
+      <Parallax className={styles.img_parallax} y={[300, -100]}>
       <img src ="https://svgsilh.com/svg/158079.svg" className = {styles.img_2} alt="image"/>
       </Parallax>
       <Parallax className={styles.img_parallax} y={[-70, 70]}>
@@ -89,11 +90,15 @@ export default function Home() {
             <li><p>Женская.........................................................................1500р</p></li>
             <li><p>Детская..........................................................................1000р</p></li>
           </ul>
-          <img src ={`usiki${usiki.toString()}`} alt="image"/>
+          <div className={styles.usiki}>
+            <img src ={`${frameArray[`${usiki}`]}`} alt="image"/>
+          </div>
         </div>
       </div>
 
-      <div className={styles.gallery} style = {{margin: `-${gallery}px`}} id="gallery">
+
+      <div className={styles.gallery_out}style={{position: `${stop}`}}>
+      <div className={styles.gallery} style = {{marginLeft: `${-gallery}px`}} id="gallery">
         <img src ="https://techcrunch.com/wp-content/uploads/2019/06/songe-dave-barbershop.jpg?w=730&crop=1"/>
         <img src ="https://avatars.mds.yandex.net/get-altay/2004078/2a0000016f1a2fcdb8668a715260e6e09956/XXL"/>
         <img src ="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/to3pHsmq9xGEvp9F2thJiOq221c=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/UKX5C3AHQ4I6TEW3FHT2VWB2IU.jpg"/>
@@ -101,21 +106,16 @@ export default function Home() {
         <img src ="https://static1-repo.aif.ru/1/8e/662079/17d7306e264ac2fed78642a2784e73f4.jpg"/>
         <img src ="https://media-cdn.tripadvisor.com/media/photo-s/12/41/7b/99/welcome-to-the-barbershop.jpg"/>
       </div>
+      </div>
 
-      <ParallaxProvider>
-      <Parallax className={styles.contact_parallax} y={[-40, 65]}>
+
       <div className={styles.contact} id="contact">
-      <Parallax className={styles.contact_parallax} y={[-40, 65]}>
         <h2>Контакты</h2>
         <p>Место для вашего номера телефона</p>
         <p>Место для вашего мыла</p>
         <p>Инста</p>
         <p>Ещё что-нибудь важное</p>
-        </Parallax>
       </div>
-      </Parallax>
-      </ParallaxProvider>
-
     </div>
   )
 

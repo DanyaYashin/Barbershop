@@ -147,6 +147,7 @@ body{
   background: rgba(18, 14, 33, 1);
   transform: skewY(-6deg);
   width: 40vw;
+  height: 400px;
   padding: 100px;
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
 }
@@ -169,11 +170,15 @@ body{
   color: white;
 }
 
+.usiki{
+  transform: skewY(6deg);
+  padding-left: 10vw;
+}
+
 .gallery{
-  margin-top: 300px;
-  margin-left: 300vw;
-  width: 3000px;
-  position: fixed;
+  margin-top: 200px;
+  padding-left: 330vw;
+  width: 300vw;
 }
 
 .gallery img{
@@ -183,7 +188,8 @@ body{
 }
 
 .contact{
-  margin-top: 1000px;
+  margin-bottom: -10px;
+  margin-top: 1200px;
   font-size: 20px;
   color: white;
   text-align: center;
