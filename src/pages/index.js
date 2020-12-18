@@ -16,6 +16,7 @@ export default function Home() {
   const frameArray = [us1,us2,us3,us4];
   const [Angle, setAngle] = useState(0);
   const [frame, setFrame] = useState(0);
+  const [galleryPosition, setGallery] = useState(250);
   const handleScroll = () => {
     //const position = window.pageYOffset;
     //setScrollPosition(position);
@@ -29,6 +30,8 @@ export default function Home() {
       supportFrame = 6 - supportFrame;
     };
     setFrame(supportFrame);
+    let gp = 250-window.pageYOffset;
+    setGallery(gp);
 };
 
 
@@ -85,18 +88,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.gallery} id="gallery">
+      <div className={styles.gallery} style={{marginLeft: `${galleryPosition}vw`}} id="gallery">
         <img src ="https://techcrunch.com/wp-content/uploads/2019/06/songe-dave-barbershop.jpg?w=730&crop=1"/>
-        <img src ="https://avatars.mds.yandex.net/get-altay/2004078/2a0000016f1a2fcdb8668a715260e6e09956/XXL"/>
-        <img src ="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/to3pHsmq9xGEvp9F2thJiOq221c=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/UKX5C3AHQ4I6TEW3FHT2VWB2IU.jpg"/>
-        <img src ="https://i1.wp.com/provladimir.ru/wp-content/uploads/2019/08/20190813_top_gan-18.jpg"/>
-        <img src ="https://static1-repo.aif.ru/1/8e/662079/17d7306e264ac2fed78642a2784e73f4.jpg"/>
-        <img src ="https://media-cdn.tripadvisor.com/media/photo-s/12/41/7b/99/welcome-to-the-barbershop.jpg"/>
       </div>
 
       <ParallaxProvider>
-      <Parallax className={styles.contact_parallax} y={[-40, 65]}>
-      <div className={styles.contact} id="contact">
+      <Parallax className={styles.contact_parallax}  y={[-40, 65]}>
+      <div className={styles.contact}  id="contact">
       <Parallax className={styles.contact_parallax} y={[-40, 65]}>
         <h2>Контакты</h2>
         <p>Место для вашего номера телефона</p>

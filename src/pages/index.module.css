@@ -169,14 +169,14 @@ body{
 }
 
 .gallery{
-  margin-top: -200px;
+
+  z-index: 3;
+  margin-top: -500px;
   margin-bottom: -150px;
-  margin-left: 36.5vw;
   width: 350px;
   height: 108vw;
   overflow-y: auto;
   overflow-x: hidden;
-  transform: rotate(-96deg);
 }
 
 .gallery img{
@@ -184,7 +184,6 @@ body{
   margin-bottom: -70px;
   width: 550px;
   height: 420px;
-  transform: rotate(96deg);
 }
 
 ::-webkit-scrollbar {
