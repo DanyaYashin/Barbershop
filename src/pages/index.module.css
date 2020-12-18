@@ -177,14 +177,15 @@ body{
 
 .gallery{
   margin-top: 200px;
-  padding-left: 330vw;
   width: 300vw;
+  position: absolute;
 }
 
 .gallery img{
   width: 500px;
   height: 400px;
   float: left;
+
 }
 
 .contact{

@@ -17,25 +17,19 @@ export default function Home() {
   const [Angle, setAngle] = useState(0);
   const [usiki, setUsiki] = useState(0);
   const [gallery, setGallery] = useState(0);
-  const [stop, setStop] = useState(0);
   const handleScroll = () => {
     let supportAngle = ((window.pageYOffset)/5)%30;
-    let movingUsiki = ((window.pageYOffset)/2)%6;
+    let movingUsiki = ((window.pageYOffset)/10)%6;
     let horizontalScrolling = ((window.pageYOffset));
-    let stopScrolling = ((window.pageYOffset));
     if (supportAngle > 15){
       supportAngle = 30 - supportAngle;
     }
     if (movingUsiki > 3){
       movingUsiki = 6 - movingUsiki;
     }
-    if (3000 < stopScrolling <3500){
-      stopScrolling='fixed';
-    }
     setAngle(supportAngle);
     setUsiki(movingUsiki);
     setGallery(horizontalScrolling);
-    setStop(stopScrolling);
 };
 
 
@@ -91,14 +85,14 @@ export default function Home() {
             <li><p>Детская..........................................................................1000р</p></li>
           </ul>
           <div className={styles.usiki}>
-            <img src ={`${frameArray[`${usiki}`]}`} alt="image"/>
+            <img src ={`${frameArray[`${Math.floor(usiki)}`]}`} alt="image"/>
           </div>
         </div>
       </div>
 
 
-      <div className={styles.gallery_out}style={{position: `${stop}`}}>
-      <div className={styles.gallery} style = {{marginLeft: `${-gallery}px`}} id="gallery">
+      <div className={styles.gallery_out}style={{transform: `matrix(1, 0, 0, 1,${-gallery},0)`}}>
+      <div className={styles.gallery} style = {{marginTop: `${-gallery}px`}} id="gallery">
         <img src ="https://techcrunch.com/wp-content/uploads/2019/06/songe-dave-barbershop.jpg?w=730&crop=1"/>
         <img src ="https://avatars.mds.yandex.net/get-altay/2004078/2a0000016f1a2fcdb8668a715260e6e09956/XXL"/>
         <img src ="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/to3pHsmq9xGEvp9F2thJiOq221c=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/UKX5C3AHQ4I6TEW3FHT2VWB2IU.jpg"/>
